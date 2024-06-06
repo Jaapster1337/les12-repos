@@ -1,6 +1,7 @@
 package com.example.lesopdracht12.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
 
 import java.time.LocalDate;
 
@@ -17,6 +18,8 @@ public class Teacher {
     private LocalDate dob;
     @Column(nullable = false, unique = true)
     private String email;
+    @Max(100000)
+    private int salary;
 
     public Long getId() {
         return id;
@@ -52,6 +55,14 @@ public class Teacher {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }
 

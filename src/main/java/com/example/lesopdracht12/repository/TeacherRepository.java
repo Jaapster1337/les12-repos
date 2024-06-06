@@ -9,4 +9,6 @@ public interface TeacherRepository extends JpaRepository<Teacher, Long> {
 
     List<Teacher> findByLastNameContainingIgnoreCase(String lname);
 
+    boolean existsByEmail(String email);
+
 }
